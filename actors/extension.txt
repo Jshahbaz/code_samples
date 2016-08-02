@@ -1,0 +1,48 @@
+//Names:      Jared Shahbazian, Benjamin Nagengast
+//Assignment: PA4
+//File:       extension.txt
+
+
+Problem: We always here about celebrity couples, but have you ever wondered
+ “how did they meet?” Sure they know a lot of people who probably could set them
+  up, but who wants to embarrassingly ask hundreds of people if they know
+  so-and-so? So they must find the easiest and most efficient people to ask,
+   only people who can actually set them up, or at least introduce them to
+   someone who can! This is precisely what ./extension does. It gives the
+   desperate actor a step-by-step network of people that they know who can
+   set them up with their celeb crush.
+
+
+How we solved it: The program utilizes a list of actors and the movies that
+ they have been in. From this, the program determines who knows who based
+ on acting in the same movie. It creates a network of actors and actresses.
+ It then determines who the desperate actor knows, who those people know, and
+  so on until somebody knows the actor/actress whom the seeker is seeking. It
+   uses a searching algorithm known as Djikstra’s to determine if an
+   actor/actress could eventually find enough connections to meet the person
+    they seek. The program realizes that you can only ask one person at a time,
+     and allows you to input their response once you ask them.
+
+
+How we tested: The best way to test is to run the program,
+alternating “yes” and “no” responses, which test various
+ scenarios that could arise in real life. The program is
+ based off of the actor/actress going to other actor/actresses
+ and asking if they will introduce them to someone else. Inputting
+  various pairs of actors/actresses in the input file was key to
+   figuring out if the matchmaker was working.
+
+How to run: The command:
+
+./extension [file name of actor/movies] [the file name of the input pair] [year you want to be matched]
+
+1 [file name of actor/movies] : a tsv file in the form of Actor/Actress<TAB>Movie<TAB>Year that contains all the movies that an actor has been in (movie_casts.tsv)
+2 [the file name of the input pair] : a tsv file in the form of Actor1<TAB>Actor2 where Actor1 is the actor/actress who wishes to be set up with Actor2
+3 [year you want to be matched] : a year, the year in which the actor/actress wants to be matched
+
+The program is in the First Person point of view, from the perspective of the
+ actor/actress that wants to get setup. The program prompts user to make the
+ decision of who they want to ask, as well as to input the response of other
+ people. WARNING if you keep entering ‘y’ you may keep yourself in a loop
+ because you are going to keep asking the same people, so you must work in
+  some ’n’s. You will reach Actor2 eventually. 

@@ -1,0 +1,6 @@
+*.o
+*.dSY*
+*.txt
+benchHash
+benchtrie
+benchBST
